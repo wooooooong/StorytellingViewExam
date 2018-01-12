@@ -22,21 +22,21 @@ open class TileImageScrollView: UIScrollView {
     private var currentBounds = CGSize.zero
     public internal(set) var doubleTap: UITapGestureRecognizer!
 
-    open override var contentSize: CGSize {
-        didSet {
-            contentSizeOrBoundsDidChange()
-        }
-    }
-
-    open override var bounds: CGRect {
-        didSet {
-            contentSizeOrBoundsDidChange()
-        }
-    }
+//    open override var contentSize: CGSize {
+//        didSet {
+//            contentSizeOrBoundsDidChange()
+//        }
+//    }
+//
+//    open override var bounds: CGRect {
+//        didSet {
+//            contentSizeOrBoundsDidChange()
+//        }
+//    }
 
     public func set(dataSource: TileImageViewDataSource) {
         delegate = self
-
+        
         doubleTap = UITapGestureRecognizer(target: self, action: #selector(TileImageScrollView.didDoubleTapped(_:)))
         doubleTap.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTap)
@@ -55,9 +55,18 @@ open class TileImageScrollView: UIScrollView {
 
         currentBounds = bounds.size
         self.contentSize = dataSource.contentSize
-
+        
         setMaxMinZoomScalesForCurrentBounds()
         setZoomScale(minimumZoomScale, animated: false)
+        
+        
+        let scrollViewSize = self.bounds.size
+        let imageSize = contentView?.frame.size
+        
+        let horizontalSpace = (imageSize?.width)! < scrollViewSize.width ? (scrollViewSize.width - (imageSize?.width)!) / 4 : 0
+        let verticalSpace = (imageSize?.height)! < scrollViewSize.height ? (scrollViewSize.height - (imageSize?.height)!) / 4 : 0
+        self.contentInset = UIEdgeInsets(top: verticalSpace, left: horizontalSpace, bottom: verticalSpace, right: horizontalSpace)
+        
     }
 
     // Scale contentSize
@@ -89,20 +98,24 @@ open class TileImageScrollView: UIScrollView {
 
 // MARK: UIScrollViewDelegate
 extension TileImageScrollView: UIScrollViewDelegate {
+    
+    
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
     }
 
     // Set content TopX and TopY for contentView
-    private func contentSizeOrBoundsDidChange() {
-        if currentBounds != bounds.size {
-            currentBounds = bounds.size
-            setMaxMinZoomScalesForCurrentBounds()
-        }
-        let topX = max((bounds.width - contentSize.width)/2, 0)
-        let topY = max((bounds.height - contentSize.height)/2, 0)
-        contentView?.frame.origin = CGPoint(x: topX, y: topY)
-    }
+//    private func contentSizeOrBoundsDidChange() {
+//        if currentBounds != bounds.size {
+//            currentBounds = bounds.size
+//            setMaxMinZoomScalesForCurrentBounds()
+//        }
+//        let topX = max((bounds.width - contentSize.width)/2, 0)
+//        let topY = max((bounds.height - contentSize.height)/2, 0)
+//
+//        contentView?.frame.origin = CGPoint(x: topX, y: topY)
+//
+//    }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         tileImageScrollViewDelegate?.didScroll(scrollView: self)
