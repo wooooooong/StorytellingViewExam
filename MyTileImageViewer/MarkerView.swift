@@ -14,6 +14,7 @@ public class MarkerView: UIView {
     var y = CGFloat()
     var zoomScale = CGFloat()
     var imageView: UIImageView?
+    var num = 0
     
     private var markerTapGestureRecognizer = UITapGestureRecognizer()
     
@@ -56,6 +57,9 @@ public class MarkerView: UIView {
         self.isAudioContent = isAudioContent
         self.isVideoContent = isVideoContent
         self.isTextContent = isTextContent
+        
+        num = UserDefaults.standard.integer(forKey: "integerKeyName")
+        UserDefaults.standard.set(num+1, forKey: "integerKeyName")
     }
     
     // marker image 설정
@@ -121,7 +125,8 @@ extension MarkerView: UIGestureRecognizerDelegate {
             dataSource.zoom(destinationRect: destinationRect)
             markerContentSet()
             isSelected = true
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showMarker"), object: nil, userInfo: nil)
+            let number:[String: Any] = ["num":num]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showMarker"), object: nil, userInfo: number)
         }
     }
 }

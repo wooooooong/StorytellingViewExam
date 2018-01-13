@@ -13,15 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var tileImageScrollView: TileImageScrollView!
     var dataSource: TileImageViewDataSource?
 
-    @IBOutlet weak var editorBtn: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     var audioContentView = AudioContentView()
     var videoContentView = VideoContentView()
     var textContentView = TextContentView()
     var titleLabel = UILabel()
-    
+    var num = 0
     var markerDataSource: MarkerViewDataSource!
     var isEditor = false
+    var isSelected = false
     var centerPoint = UIView()
     var markerArray = [MarkerView]()
     var imageSize = CGSize()
@@ -56,6 +55,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(0, forKey: "integerKeyName")
+        
         let tiles: [CGSize] = [CGSize(width: 2048, height: 2048), CGSize(width: 1024, height: 1024),
                                CGSize(width: 512, height: 512), CGSize(width: 256, height: 256),
                                CGSize(width: 128, height: 128)]
@@ -104,53 +105,72 @@ class ViewController: UIViewController {
         centerPoint.isHidden = true
         
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backBtn))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Editor", style: .plain, target: self, action: #selector(editorBtn))
+        
+        
     }
     override func viewWillLayoutSubviews() {
         setZoomParametersForSize(tileImageScrollView.bounds.size)
 //        recenterImage()
     }
 
-    @IBAction func editionButton(_ sender: Any) {
-        if isEditor == false {
-            editorBtn.titleLabel?.text = "Done"
-            tileImageScrollView.layer.borderWidth = 4
-            tileImageScrollView.layer.borderColor = UIColor.red.cgColor
-            centerPoint.isHidden = isEditor
-            isEditor = true
-            
+    @objc func editorBtn() {
+        if isSelected == false {
+            if isEditor == false {
+                self.navigationItem.rightBarButtonItem?.title = "Done"
+                tileImageScrollView.layer.borderWidth = 4
+                tileImageScrollView.layer.borderColor = UIColor.red.cgColor
+                centerPoint.isHidden = isEditor
+                isEditor = true
+            } else {
+                self.navigationItem.rightBarButtonItem?.title = "Editor"
+                tileImageScrollView.layer.borderWidth = 0
+                centerPoint.isHidden = isEditor
+                isEditor = false
+                
+                let editorViewController = EditorContentViewController()
+                
+                editorViewController.zoom = Double(tileImageScrollView.zoomScale)
+                editorViewController.x = Double(tileImageScrollView.contentOffset.x/tileImageScrollView.zoomScale + tileImageScrollView.bounds.size.width/tileImageScrollView.zoomScale/2)
+                editorViewController.y = Double(tileImageScrollView.contentOffset.y/tileImageScrollView.zoomScale + tileImageScrollView.bounds.size.height/tileImageScrollView.zoomScale/2)
+                
+                self.show(editorViewController, sender: nil)
+            }
         } else {
-            editorBtn.titleLabel?.text = "Editor"
-            tileImageScrollView.layer.borderWidth = 0
-            centerPoint.isHidden = isEditor
-            isEditor = false
-            
-            
-            let editorViewController = EditorContentViewController()
-            
-            editorViewController.zoom = Double(tileImageScrollView.zoomScale)
-            editorViewController.x = Double(tileImageScrollView.contentOffset.x/tileImageScrollView.zoomScale + tileImageScrollView.bounds.size.width/tileImageScrollView.zoomScale/2)
-            editorViewController.y = Double(tileImageScrollView.contentOffset.y/tileImageScrollView.zoomScale + tileImageScrollView.bounds.size.height/tileImageScrollView.zoomScale/2)
-            
-            self.show(editorViewController, sender: nil)
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+            isSelected = false
+            for marker in markerArray {
+                if marker.num == num {
+                    let index = markerArray.index(of: marker)
+                    markerArray.remove(at: index!)
+                }
+            }
+            backBtn()
         }
+        
     }
     
-    @objc func showMarker(){
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
-        self.navigationItem.rightBarButtonItem?.title = ""
+    @objc func showMarker(_ notification: NSNotification){
+        self.navigationItem.rightBarButtonItem?.title = "Delete Marker"
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.red
+        isSelected = true
+        num = notification.userInfo?["num"] as! Int
         for marker in markerArray {
             marker.isHidden = true
         }
+        
     }
     
-    @IBAction func backButtonAction(_ sender: UIButton) {
+    @objc func backBtn() {
         isEditor = false
+        isSelected = false
         tileImageScrollView.layer.borderWidth = 0
         centerPoint.isHidden = true
-        editorBtn.titleLabel?.text = "Editor"
         
-        self.navigationItem.rightBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.title = "Editor"
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         
         markerDataSource?.reset()
         

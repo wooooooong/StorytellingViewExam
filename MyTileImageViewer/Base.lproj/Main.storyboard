@@ -30,31 +30,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HpX-AN-ymC">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="LXd-Na-ulR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hLf-eg-TFa">
-                                <rect key="frame" x="16" y="7" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77D-LA-06V"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="njy-YM-5Ss">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4fX-p6-CnW">
-                                <rect key="frame" x="318" y="7" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Editor"/>
-                                <connections>
-                                    <action selector="editionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vez-TV-cVe"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="HpX-AN-ymC"/>
                     <connections>
-                        <outlet property="backButton" destination="hLf-eg-TFa" id="wRP-4F-HZf"/>
-                        <outlet property="editorBtn" destination="4fX-p6-CnW" id="wpR-hS-7ka"/>
                         <outlet property="tileImageScrollView" destination="nYF-kD-Url" id="j7z-bL-9g0"/>
                     </connections>
                 </viewController>
