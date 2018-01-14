@@ -14,6 +14,8 @@
 		04727BCE200772F800E23872 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC7200772F700E23872 /* MarkerView.swift */; };
 		04727BCF200772F800E23872 /* MarkerViewDataSoucrce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC8200772F700E23872 /* MarkerViewDataSoucrce.swift */; };
 		04727BD0200772F800E23872 /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC9200772F800E23872 /* EditorScrollView.swift */; };
+		04727BD5200B131C00E23872 /* shoppingSmall.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04727BD3200B131A00E23872 /* shoppingSmall.jpeg */; };
+		04727BD6200B131C00E23872 /* shopping.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04727BD4200B131B00E23872 /* shopping.jpg */; };
 		7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* TileImageView.swift */; };
 		7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
@@ -39,6 +41,8 @@
 		04727BC7200772F700E23872 /* MarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		04727BC8200772F700E23872 /* MarkerViewDataSoucrce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerViewDataSoucrce.swift; sourceTree = "<group>"; };
 		04727BC9200772F800E23872 /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
+		04727BD3200B131A00E23872 /* shoppingSmall.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shoppingSmall.jpeg; path = ../../../../../Downloads/shoppingSmall.jpeg; sourceTree = "<group>"; };
+		04727BD4200B131B00E23872 /* shopping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shopping.jpg; path = ../../../../../Downloads/shopping.jpg; sourceTree = "<group>"; };
 		7E0C4F9A1FF7357D00778CED /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				04727BD4200B131B00E23872 /* shopping.jpg */,
+				04727BD3200B131A00E23872 /* shoppingSmall.jpeg */,
 				04727BC2200772C000E23872 /* UIScrollView_content */,
 				7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */,
 				7EE82A4D1FF8E61300901157 /* bench.jpg */,
@@ -205,9 +211,11 @@
 				7EE82A4E1FF8E61300901157 /* bench.jpg in Resources */,
 				7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */,
 				7EF458EA20036D81000EC706 /* LICENSE in Resources */,
+				04727BD6200B131C00E23872 /* shopping.jpg in Resources */,
 				7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */,
 				7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */,
 				7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */,
+				04727BD5200B131C00E23872 /* shoppingSmall.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

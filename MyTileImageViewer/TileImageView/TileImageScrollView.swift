@@ -14,61 +14,69 @@ import UIKit
 }
 
 open class TileImageScrollView: UIScrollView {
-
+    
     var tileImageScrollViewDelegate: TileImageScrollViewDelegate?
-
+    
     private var contentView: TileImageContentView?
     weak var dataSource: TileImageViewDataSource?
     private var currentBounds = CGSize.zero
     public internal(set) var doubleTap: UITapGestureRecognizer!
-
-//    open override var contentSize: CGSize {
-//        didSet {
-//            contentSizeOrBoundsDidChange()
-//        }
-//    }
-//
-//    open override var bounds: CGRect {
-//        didSet {
-//            contentSizeOrBoundsDidChange()
-//        }
-//    }
-
+    
     public func set(dataSource: TileImageViewDataSource) {
         delegate = self
         
         doubleTap = UITapGestureRecognizer(target: self, action: #selector(TileImageScrollView.didDoubleTapped(_:)))
         doubleTap.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTap)
-
+        
         self.dataSource = dataSource
-
+        
         self.tileImageScrollViewDelegate = dataSource.delegate
-
+        
         let tileImageView = TileImageView(dataSource: dataSource)
         tileImageView.dataSource = dataSource
-
+        
         contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)
         if let contentView = contentView {
             self.addSubview(contentView)
         }
-
+        
         currentBounds = bounds.size
         self.contentSize = dataSource.contentSize
         
         setMaxMinZoomScalesForCurrentBounds()
         setZoomScale(minimumZoomScale, animated: false)
         
+        // Set content TopX and TopY for contentView
+        let horizontalSpace = max(-(contentSize.width - bounds.width)/2, 0)
+        let verticalSpace = max(-(contentSize.height - bounds.height)/2, 0)
         
-        let scrollViewSize = self.bounds.size
-        let imageSize = contentView?.frame.size
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        let horizontalSpace = (imageSize?.width)! < scrollViewSize.width ? (scrollViewSize.width - (imageSize?.width)!) / 4 : 0
-        let verticalSpace = (imageSize?.height)! < scrollViewSize.height ? (scrollViewSize.height - (imageSize?.height)!) / 4 : 0
-        self.contentInset = UIEdgeInsets(top: verticalSpace, left: horizontalSpace, bottom: verticalSpace, right: horizontalSpace)
+        self.contentInset = UIEdgeInsets(top: verticalSpace - (statusBarHeight / 2), left: horizontalSpace,
+                                         bottom: verticalSpace - (statusBarHeight / 2), right: horizontalSpace)
+        
+        if UIDevice.current.isiPhoneX {
+            contentInset.top -= 17
+            contentInset.bottom -= 17
+        }
+        
+        if bounds.origin.y != 0 {
+            bounds.origin.y = 0
+        }
+        if bounds.origin.x != 0 {
+            bounds.origin.x = 0
+        }
+        
+        if let viewController = self.superview?.getParentViewController() {
+            if let navHeight = viewController.navigationController?.navigationBar.frame.height {
+                contentInset.top -= navHeight / 2
+                contentInset.bottom -= navHeight / 2
+            }
+        }
         
     }
-
+    
     // Scale contentSize
     private func setMaxMinZoomScalesForCurrentBounds() {
         guard let dataSource = dataSource else {
@@ -76,20 +84,20 @@ open class TileImageScrollView: UIScrollView {
         }
         setNeedsLayout()
         layoutIfNeeded()
-
+        
         let boundsSize = bounds.size
         let imageSize = dataSource.contentSize
-
+        
         let xScale = boundsSize.width / imageSize.width
         let yScale = boundsSize.height / imageSize.height
-
+        
         let minScale = min(xScale, yScale)
-
+        
         minimumZoomScale = minScale
         if let maxZoom = dataSource.maxZoomLevel {
             maximumZoomScale = maxZoom
         }
-
+        
         if minimumZoomScale > zoomScale {
             setZoomScale(minimumZoomScale, animated: false)
         }
@@ -98,38 +106,23 @@ open class TileImageScrollView: UIScrollView {
 
 // MARK: UIScrollViewDelegate
 extension TileImageScrollView: UIScrollViewDelegate {
-    
-    
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
     }
-
-    // Set content TopX and TopY for contentView
-//    private func contentSizeOrBoundsDidChange() {
-//        if currentBounds != bounds.size {
-//            currentBounds = bounds.size
-//            setMaxMinZoomScalesForCurrentBounds()
-//        }
-//        let topX = max((bounds.width - contentSize.width)/2, 0)
-//        let topY = max((bounds.height - contentSize.height)/2, 0)
-//
-//        contentView?.frame.origin = CGPoint(x: topX, y: topY)
-//
-//    }
-
+    
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         tileImageScrollViewDelegate?.didScroll(scrollView: self)
     }
-
+    
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
         tileImageScrollViewDelegate?.didZoom(scrollView: self)
     }
-
+    
 }
 
 // MARK: DoubleTappable
 extension TileImageScrollView: DoubleTappable {
-
+    
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer) {
         if zoomScale >= maximumZoomScale {
             setZoomScale(minimumZoomScale, animated: true)
@@ -140,12 +133,35 @@ extension TileImageScrollView: DoubleTappable {
             zoom(to: maxZoomRect, animated: true)
         }
     }
-
+    
     private func rect(around point: CGPoint, atZoomScale zoomScale: CGFloat) -> CGRect {
         let boundsSize = bounds.size
         let scaledBoundsSize = CGSize(width: boundsSize.width / zoomScale, height: boundsSize.height / zoomScale)
         let point = CGRect(x: point.x - scaledBoundsSize.width / 2, y: point.y - scaledBoundsSize.height / 2,
                            width: scaledBoundsSize.width, height: scaledBoundsSize.height)
         return point
+    }
+}
+
+// MARK: For Positioning ContentView to Center in ScrollView
+extension UIResponder {
+    func getParentViewController() -> UIViewController? {
+        if self.next is UIViewController {
+            return self.next as? UIViewController
+        } else {
+            if let n = self.next {
+                return n.getParentViewController()
+            } else {
+                return nil
+            }
+        }
+    }
+}
+extension UIDevice {
+    var isiPhoneX: Bool {
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone && (UIScreen.main.bounds.size.height == 812 && UIScreen.main.bounds.size.width == 375) {
+            return true
+        }
+        return false
     }
 }

@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     var centerPoint = UIView()
     var markerArray = [MarkerView]()
     var imageSize = CGSize()
+    var imageName = "bench"
+    var imageExtension = "jpg"
+    var thumbnailName = "smallBench"
+    var thumbnailExtension = "jpg"
     
     @objc func addMarker(_ notification: NSNotification){
         let marker = MarkerView()
@@ -61,11 +65,13 @@ class ViewController: UIViewController {
                                CGSize(width: 512, height: 512), CGSize(width: 256, height: 256),
                                CGSize(width: 128, height: 128)]
 
-        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg")
-
-        imageSize = CGSize(width: 5214, height: 7300)
-        let thumbnailImageURL = Bundle.main.url(forResource: "smallBench", withExtension: "jpg")!
-
+        UIImage.saveTileOf(size: tiles, name: imageName, withExtension: imageExtension)
+        
+        let image = UIImage(named: imageName + "." + imageExtension)
+        imageSize = CGSize(width: (image?.size.width)!, height: (image?.size.height)!)
+        
+        let thumbnailImageURL = Bundle.main.url(forResource: thumbnailName , withExtension: thumbnailExtension)!
+        
         setupExample(imageSize: imageSize, tileSize: tiles, imageURL: thumbnailImageURL)
         
         NotificationCenter.default.addObserver(self, selector: #selector(addMarker), name: NSNotification.Name(rawValue: "makeMarker"), object: nil)
@@ -90,14 +96,21 @@ class ViewController: UIViewController {
         textContentView.frame = CGRect(x: 0, y: self.view.frame.height - 80, width: self.view.frame.width, height: 100)
         self.view.addSubview(textContentView)
         
+        var ratio:Double = 200
+        if imageSize.height > imageSize.width {
+            ratio = Double(imageSize.height) / 40
+        } else {
+            ratio = Double(imageSize.width) / 40
+        }
+        
         // markerData Source 설정
-        markerDataSource = MarkerViewDataSource(scrollView: tileImageScrollView, imageSize: imageSize, ratioByImage: 180, titleLabelView: titleLabel, audioContentView: audioContentView, videoContentView: videoContentView, textContentView: textContentView)
+        markerDataSource = MarkerViewDataSource(scrollView: tileImageScrollView, imageSize: imageSize, ratioByImage: ratio, titleLabelView: titleLabel, audioContentView: audioContentView, videoContentView: videoContentView, textContentView: textContentView)
         
         
         setZoomParametersForSize(tileImageScrollView.bounds.size)
         
         // edit center point 설정
-        centerPoint.frame = CGRect(x: tileImageScrollView.frame.width/2 + tileImageScrollView.contentInset.left - 5 , y: tileImageScrollView.frame.height/2 + tileImageScrollView.contentInset.top - 5, width: CGFloat(10), height: CGFloat(10))
+        centerPoint.frame = CGRect(x: tileImageScrollView.frame.width/2 - 5 , y: tileImageScrollView.frame.height/2 + (self.navigationController?.navigationBar.frame.height)! - 15, width: CGFloat(10), height: CGFloat(10))
         centerPoint.backgroundColor = UIColor.red
         centerPoint.layer.cornerRadius = 5
         
@@ -180,15 +193,6 @@ class ViewController: UIViewController {
         }
     }
     
-//    func recenterImage() {
-//        let scrollViewSize = tileImageScrollView.bounds.size
-//        
-//        let horizontalSpace = imageSize.width < scrollViewSize.width ? (scrollViewSize.width - imageSize.width) / 2 : 0
-//        let verticalSpace = imageSize.height < scrollViewSize.height ? (scrollViewSize.height - imageSize.height) / 2 : 0
-//        
-//        tileImageScrollView.contentInset = UIEdgeInsets(top: verticalSpace, left: horizontalSpace, bottom: verticalSpace, right: horizontalSpace)
-//    }
-//    
     func setZoomParametersForSize(_ scrollViewSize: CGSize) {
         let widthScale = scrollViewSize.width / imageSize.width
         let heightScale = scrollViewSize.height / imageSize.height
@@ -204,7 +208,7 @@ class ViewController: UIViewController {
         dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
         
         dataSource?.delegate = self
-        dataSource?.thumbnailImageName = "bench"
+        dataSource?.thumbnailImageName = imageName
 
         // 줌을 가장 많이 확대한 수준
         dataSource?.maxTileLevel = 5
@@ -214,7 +218,7 @@ class ViewController: UIViewController {
 
         dataSource?.maxZoomLevel = 8
 
-        dataSource?.imageExtension = "jpg"
+        dataSource?.imageExtension = imageExtension
         tileImageScrollView.set(dataSource: dataSource!)
 
         dataSource?.requestBackgroundImage { _ in
