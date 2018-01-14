@@ -1,0 +1,6 @@
+framework module UIScrollView_minimap {
+  umbrella header "UIScrollView_minimap-umbrella.h"
+
+  export *
+  module * { export * }
+}

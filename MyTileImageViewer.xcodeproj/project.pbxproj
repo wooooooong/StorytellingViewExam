@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D5103113F3E20505C6A175 /* Pods_MyTileImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AEA15A62F723ECC37F013C /* Pods_MyTileImageViewer.framework */; };
+		041F9A51200B25760047A223 /* MyMinimapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F9A50200B25760047A223 /* MyMinimapDataSource.swift */; };
 		04727BCA200772F800E23872 /* AudioContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC3200772F600E23872 /* AudioContentView.swift */; };
 		04727BCB200772F800E23872 /* EditorContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC4200772F600E23872 /* EditorContentViewController.swift */; };
 		04727BCC200772F800E23872 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC5200772F700E23872 /* VideoContentView.swift */; };
@@ -34,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041F9A50200B25760047A223 /* MyMinimapDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMinimapDataSource.swift; sourceTree = "<group>"; };
 		04727BC3200772F600E23872 /* AudioContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContentView.swift; sourceTree = "<group>"; };
 		04727BC4200772F600E23872 /* EditorContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContentViewController.swift; sourceTree = "<group>"; };
 		04727BC5200772F700E23872 /* VideoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 		04727BC9200772F800E23872 /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
 		04727BD3200B131A00E23872 /* shoppingSmall.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shoppingSmall.jpeg; path = ../../../../../Downloads/shoppingSmall.jpeg; sourceTree = "<group>"; };
 		04727BD4200B131B00E23872 /* shopping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shopping.jpg; path = ../../../../../Downloads/shopping.jpg; sourceTree = "<group>"; };
+		27AEA15A62F723ECC37F013C /* Pods_MyTileImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTileImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0C4F9A1FF7357D00778CED /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		7EF71CE71FF4C13D001C3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageScrollView.swift; sourceTree = "<group>"; };
 		7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageViewDataSource.swift; sourceTree = "<group>"; };
+		BAA4CAC8BFBB1A9CBBD029F4 /* Pods-MyTileImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTileImageViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer.release.xcconfig"; sourceTree = "<group>"; };
+		D2BDD20273E61E87C4CFAD03 /* Pods-MyTileImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTileImageViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D5103113F3E20505C6A175 /* Pods_MyTileImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,15 @@
 			name = UIScrollView_content;
 			sourceTree = "<group>";
 		};
+		5574E5B16F70CED70C18CC0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2BDD20273E61E87C4CFAD03 /* Pods-MyTileImageViewer.debug.xcconfig */,
+				BAA4CAC8BFBB1A9CBBD029F4 /* Pods-MyTileImageViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E0C4F971FF730A100778CED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +121,8 @@
 				7E95FEC72003638100580A13 /* README.md */,
 				7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */,
 				7EF71CD91FF4C13D001C3EF2 /* Products */,
+				5574E5B16F70CED70C18CC0B /* Pods */,
+				B71703F251B12B1AB31CCE1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +148,7 @@
 				7EF71CF21FF4C90C001C3EF2 /* TileImageView */,
 				7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */,
 				7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */,
+				041F9A50200B25760047A223 /* MyMinimapDataSource.swift */,
 				7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */,
 			);
 			path = MyTileImageViewer;
@@ -147,6 +166,14 @@
 			path = TileImageView;
 			sourceTree = "<group>";
 		};
+		B71703F251B12B1AB31CCE1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27AEA15A62F723ECC37F013C /* Pods_MyTileImageViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,10 +181,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "MyTileImageViewer" */;
 			buildPhases = (
+				48DD687D8F065CE6147B29A8 /* [CP] Check Pods Manifest.lock */,
 				7EF71CD41FF4C13D001C3EF2 /* Sources */,
 				7EF71CD51FF4C13D001C3EF2 /* Frameworks */,
 				7EF71CD61FF4C13D001C3EF2 /* Resources */,
 				7E063CF51FF6258100347F57 /* ShellScript */,
+				DBE3C848BE4610A8BA0F8FF9 /* [CP] Embed Pods Frameworks */,
+				3DE4A4A5EEED56FAC24BAAA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +252,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3DE4A4A5EEED56FAC24BAAA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48DD687D8F065CE6147B29A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTileImageViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7E063CF51FF6258100347F57 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +298,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		DBE3C848BE4610A8BA0F8FF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UIScrollView_minimap/UIScrollView_minimap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_minimap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -242,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041F9A51200B25760047A223 /* MyMinimapDataSource.swift in Sources */,
 				7EF71CF11FF4C612001C3EF2 /* TileImageViewDataSource.swift in Sources */,
 				04727BCB200772F800E23872 /* EditorContentViewController.swift in Sources */,
 				04727BCC200772F800E23872 /* VideoContentView.swift in Sources */,
@@ -391,6 +473,7 @@
 		};
 		7EF71CEB1FF4C13D001C3EF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2BDD20273E61E87C4CFAD03 /* Pods-MyTileImageViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -407,6 +490,7 @@
 		};
 		7EF71CEC1FF4C13D001C3EF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA4CAC8BFBB1A9CBBD029F4 /* Pods-MyTileImageViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import UIScrollView_minimap
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var tileImageScrollView: TileImageScrollView!
+    @IBOutlet weak var minimap: MinimapView!
+    
     var dataSource: TileImageViewDataSource?
-
+    var minimapDataSource: MinimapDataSource?
+    
     var audioContentView = AudioContentView()
     var videoContentView = VideoContentView()
     var textContentView = TextContentView()
@@ -105,6 +109,14 @@ class ViewController: UIViewController {
         
         // markerData Source 설정
         markerDataSource = MarkerViewDataSource(scrollView: tileImageScrollView, imageSize: imageSize, ratioByImage: ratio, titleLabelView: titleLabel, audioContentView: audioContentView, videoContentView: videoContentView, textContentView: textContentView)
+        
+        // minimap 설정
+        minimapDataSource = MyMinimapDataSource(scrollView: tileImageScrollView, thumbnailImage: UIImage(contentsOfFile : thumbnailImageURL.path)! , originImageSize: imageSize)
+        
+        minimapDataSource?.borderColor = UIColor.red
+        minimapDataSource?.borderWidth = 2.0
+        minimapDataSource?.downSizeRatio = 4.0
+        minimap.set(dataSource: minimapDataSource!)
         
         
         setZoomParametersForSize(tileImageScrollView.bounds.size)
@@ -231,15 +243,18 @@ class ViewController: UIViewController {
 extension ViewController: TileImageScrollViewDelegate {
 
     func didScroll(scrollView: TileImageScrollView) {
-        
+        minimapDataSource?.resizeMinimapView(minimapView: minimap)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "scollViewAction"), object: nil, userInfo: nil)
     }
     
     func didZoom(scrollView: TileImageScrollView) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "scollViewAction"), object: nil, userInfo: nil)
+        
         markerArray.map { marker in
             markerDataSource?.framSet(markerView: marker)
         }
     }
 }
+
+
 

@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00D96E8B1FA648F681CA89643FD58898 /* MinimapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28AF8ACD02EE4A6FE00368F48E1808 /* MinimapDataSource.swift */; };
+		640ADFCEB51CFD5CF0B95DA1AD1B2CC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		68960CE8C70931AD7CCA730D1B525C2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		6E828AB51D50A15149AA9ED0940C9D5A /* UIScrollView_minimap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64818061F1A1CF20D7A28E932E1134D8 /* UIScrollView_minimap-dummy.m */; };
+		765204BBD7C50356E518F3DAB1DD4C5A /* Pods-MyTileImageViewer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D048A05CCB6A1D9DD063DA0721443B /* Pods-MyTileImageViewer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B0A9713E541DAC3A6EF3101CF8F7E03 /* Pods-MyTileImageViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23601FD745D1E2A4803190C1CCE3E236 /* Pods-MyTileImageViewer-dummy.m */; };
+		A0B7B6436A432B8D89C02DDA2F5473E3 /* UIScrollView_minimap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72291B0C71E544B47B0062C7028FED99 /* UIScrollView_minimap-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C71CDBCD78ACA0E1CD1CA807DCB816B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		D644DBA519BCE5C97DB4398DBB9D0DF3 /* MinimapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451610672D9013010DB479F334505AA5 /* MinimapView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBB9C475F565908DF45397418D30178B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E022D9F3D2106FCC0933767AC81C5FB5;
+			remoteInfo = UIScrollView_minimap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19E394B8E032C3CC102A5AEC90F74D82 /* Pods-MyTileImageViewer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyTileImageViewer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		23601FD745D1E2A4803190C1CCE3E236 /* Pods-MyTileImageViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyTileImageViewer-dummy.m"; sourceTree = "<group>"; };
+		2BDE553F84CAC600673FA1E916F3686B /* Pods-MyTileImageViewer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MyTileImageViewer.modulemap"; sourceTree = "<group>"; };
+		32ADF6BF7664BD8BE5E5CE15D2D153EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C6090762E509E79E92396BBF43E714D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		451610672D9013010DB479F334505AA5 /* MinimapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinimapView.swift; path = ScrollViewMinimap/Minimap/MinimapView.swift; sourceTree = "<group>"; };
+		62BD036F5C6E5FF1A124955DCB6EA71D /* Pods-MyTileImageViewer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyTileImageViewer-resources.sh"; sourceTree = "<group>"; };
+		64818061F1A1CF20D7A28E932E1134D8 /* UIScrollView_minimap-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView_minimap-dummy.m"; sourceTree = "<group>"; };
+		72291B0C71E544B47B0062C7028FED99 /* UIScrollView_minimap-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView_minimap-umbrella.h"; sourceTree = "<group>"; };
+		769C8040F3FDB85F380A0993CA281B20 /* UIScrollView_minimap.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = UIScrollView_minimap.modulemap; sourceTree = "<group>"; };
+		8651C806B74512B410E7386EC73A30A1 /* Pods_MyTileImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyTileImageViewer.framework; path = "Pods-MyTileImageViewer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B42D7EDF92FF898C82E7F8584972D26 /* UIScrollView_minimap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIScrollView_minimap.framework; path = UIScrollView_minimap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A090970704AD251212181C2A4CDE853D /* Pods-MyTileImageViewer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyTileImageViewer-frameworks.sh"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CB28AF8ACD02EE4A6FE00368F48E1808 /* MinimapDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinimapDataSource.swift; path = ScrollViewMinimap/Minimap/MinimapDataSource.swift; sourceTree = "<group>"; };
+		D0477560A92F46FD786E0D0141510E52 /* Pods-MyTileImageViewer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyTileImageViewer-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4692BDEA6096A5AD96F28A1563CE4B2 /* Pods-MyTileImageViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyTileImageViewer.release.xcconfig"; sourceTree = "<group>"; };
+		D6D048A05CCB6A1D9DD063DA0721443B /* Pods-MyTileImageViewer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyTileImageViewer-umbrella.h"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D88F29623F779962978C28482133F9F4 /* UIScrollView_minimap-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView_minimap-prefix.pch"; sourceTree = "<group>"; };
+		DB5B174EC753A04935539FAF8B61D534 /* Pods-MyTileImageViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyTileImageViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		F5FD7A6833DEEBD4F84C7FBD4A6BC2BE /* UIScrollView_minimap.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIScrollView_minimap.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300A8BC2EDA78778CF50C80355E915EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68960CE8C70931AD7CCA730D1B525C2C /* Foundation.framework in Frameworks */,
+				C71CDBCD78ACA0E1CD1CA807DCB816B5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C319AB09EADEE88238B156589F125D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640ADFCEB51CFD5CF0B95DA1AD1B2CC7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0169588A650A20072600F159527568C1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3C210E798331FA55969DB22D4149856 /* Pods-MyTileImageViewer */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				A28C2AEE96C857D3674E637555F8C8D0 /* Pods */,
+				826808E6281F72A237AB66618E902774 /* Products */,
+				0169588A650A20072600F159527568C1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E7F40D5B890CFBB659B56822440A934 /* UIScrollView_minimap */ = {
+			isa = PBXGroup;
+			children = (
+				CB28AF8ACD02EE4A6FE00368F48E1808 /* MinimapDataSource.swift */,
+				451610672D9013010DB479F334505AA5 /* MinimapView.swift */,
+				D7EC5DFD817060BAFBF94A7FD8B70DCE /* Support Files */,
+			);
+			name = UIScrollView_minimap;
+			path = UIScrollView_minimap;
+			sourceTree = "<group>";
+		};
+		826808E6281F72A237AB66618E902774 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8651C806B74512B410E7386EC73A30A1 /* Pods_MyTileImageViewer.framework */,
+				9B42D7EDF92FF898C82E7F8584972D26 /* UIScrollView_minimap.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A28C2AEE96C857D3674E637555F8C8D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E7F40D5B890CFBB659B56822440A934 /* UIScrollView_minimap */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3C210E798331FA55969DB22D4149856 /* Pods-MyTileImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				32ADF6BF7664BD8BE5E5CE15D2D153EF /* Info.plist */,
+				2BDE553F84CAC600673FA1E916F3686B /* Pods-MyTileImageViewer.modulemap */,
+				19E394B8E032C3CC102A5AEC90F74D82 /* Pods-MyTileImageViewer-acknowledgements.markdown */,
+				D0477560A92F46FD786E0D0141510E52 /* Pods-MyTileImageViewer-acknowledgements.plist */,
+				23601FD745D1E2A4803190C1CCE3E236 /* Pods-MyTileImageViewer-dummy.m */,
+				A090970704AD251212181C2A4CDE853D /* Pods-MyTileImageViewer-frameworks.sh */,
+				62BD036F5C6E5FF1A124955DCB6EA71D /* Pods-MyTileImageViewer-resources.sh */,
+				D6D048A05CCB6A1D9DD063DA0721443B /* Pods-MyTileImageViewer-umbrella.h */,
+				DB5B174EC753A04935539FAF8B61D534 /* Pods-MyTileImageViewer.debug.xcconfig */,
+				D4692BDEA6096A5AD96F28A1563CE4B2 /* Pods-MyTileImageViewer.release.xcconfig */,
+			);
+			name = "Pods-MyTileImageViewer";
+			path = "Target Support Files/Pods-MyTileImageViewer";
+			sourceTree = "<group>";
+		};
+		D7EC5DFD817060BAFBF94A7FD8B70DCE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C6090762E509E79E92396BBF43E714D /* Info.plist */,
+				769C8040F3FDB85F380A0993CA281B20 /* UIScrollView_minimap.modulemap */,
+				F5FD7A6833DEEBD4F84C7FBD4A6BC2BE /* UIScrollView_minimap.xcconfig */,
+				64818061F1A1CF20D7A28E932E1134D8 /* UIScrollView_minimap-dummy.m */,
+				D88F29623F779962978C28482133F9F4 /* UIScrollView_minimap-prefix.pch */,
+				72291B0C71E544B47B0062C7028FED99 /* UIScrollView_minimap-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UIScrollView_minimap";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		023E1C71EA1A17462E38BA3B70DBA5DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B7B6436A432B8D89C02DDA2F5473E3 /* UIScrollView_minimap-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC39C27343A34E49C03F19275697711E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765204BBD7C50356E518F3DAB1DD4C5A /* Pods-MyTileImageViewer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		784DB2EB17DDDDF599A49C2563E4156D /* Pods-MyTileImageViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5733EF607CB04DFB47F585569630ADE /* Build configuration list for PBXNativeTarget "Pods-MyTileImageViewer" */;
+			buildPhases = (
+				31830BD190EBC7C9B269C6418520E8FC /* Sources */,
+				A5C319AB09EADEE88238B156589F125D /* Frameworks */,
+				EC39C27343A34E49C03F19275697711E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72D3F9FCC3EED80E6F3AE5E181FA049F /* PBXTargetDependency */,
+			);
+			name = "Pods-MyTileImageViewer";
+			productName = "Pods-MyTileImageViewer";
+			productReference = 8651C806B74512B410E7386EC73A30A1 /* Pods_MyTileImageViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E022D9F3D2106FCC0933767AC81C5FB5 /* UIScrollView_minimap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACB2E415382380FEF543D2420B3F0A33 /* Build configuration list for PBXNativeTarget "UIScrollView_minimap" */;
+			buildPhases = (
+				15B631EE2BC7E966479132A094B61493 /* Sources */,
+				300A8BC2EDA78778CF50C80355E915EB /* Frameworks */,
+				023E1C71EA1A17462E38BA3B70DBA5DF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIScrollView_minimap;
+			productName = UIScrollView_minimap;
+			productReference = 9B42D7EDF92FF898C82E7F8584972D26 /* UIScrollView_minimap.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 826808E6281F72A237AB66618E902774 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				784DB2EB17DDDDF599A49C2563E4156D /* Pods-MyTileImageViewer */,
+				E022D9F3D2106FCC0933767AC81C5FB5 /* UIScrollView_minimap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15B631EE2BC7E966479132A094B61493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D96E8B1FA648F681CA89643FD58898 /* MinimapDataSource.swift in Sources */,
+				D644DBA519BCE5C97DB4398DBB9D0DF3 /* MinimapView.swift in Sources */,
+				6E828AB51D50A15149AA9ED0940C9D5A /* UIScrollView_minimap-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31830BD190EBC7C9B269C6418520E8FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0A9713E541DAC3A6EF3101CF8F7E03 /* Pods-MyTileImageViewer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72D3F9FCC3EED80E6F3AE5E181FA049F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIScrollView_minimap;
+			target = E022D9F3D2106FCC0933767AC81C5FB5 /* UIScrollView_minimap */;
+			targetProxy = EBB9C475F565908DF45397418D30178B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		017716BF53BED45AE66CD67724364469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5FD7A6833DEEBD4F84C7FBD4A6BC2BE /* UIScrollView_minimap.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIScrollView_minimap/UIScrollView_minimap-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIScrollView_minimap/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIScrollView_minimap/UIScrollView_minimap.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = UIScrollView_minimap;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A41B15D3AA834993ADDD808FA9D8764 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D6CDADFE1A4D7ABE9A4C5DA67880AC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB5B174EC753A04935539FAF8B61D534 /* Pods-MyTileImageViewer.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyTileImageViewer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyTileImageViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8A5F90E4F339DD92D86C1ED0C5572E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5FD7A6833DEEBD4F84C7FBD4A6BC2BE /* UIScrollView_minimap.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UIScrollView_minimap/UIScrollView_minimap-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIScrollView_minimap/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIScrollView_minimap/UIScrollView_minimap.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = UIScrollView_minimap;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC80BBB5C066539FFFC0B2127CA5D3C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F49C3D6C99F72235BB5A9AB148C1D7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4692BDEA6096A5AD96F28A1563CE4B2 /* Pods-MyTileImageViewer.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyTileImageViewer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyTileImageViewer/Pods-MyTileImageViewer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyTileImageViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC80BBB5C066539FFFC0B2127CA5D3C4 /* Debug */,
+				1A41B15D3AA834993ADDD808FA9D8764 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACB2E415382380FEF543D2420B3F0A33 /* Build configuration list for PBXNativeTarget "UIScrollView_minimap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				017716BF53BED45AE66CD67724364469 /* Debug */,
+				B8A5F90E4F339DD92D86C1ED0C5572E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5733EF607CB04DFB47F585569630ADE /* Build configuration list for PBXNativeTarget "Pods-MyTileImageViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D6CDADFE1A4D7ABE9A4C5DA67880AC8 /* Debug */,
+				F49C3D6C99F72235BB5A9AB148C1D7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
