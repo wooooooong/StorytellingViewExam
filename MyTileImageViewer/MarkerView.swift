@@ -114,6 +114,7 @@ public class MarkerView: UIView {
         
         if isTextContent {
             dataSource.textContentView?.labelSet(title: textTitle, link: textLink, text: textContent)
+            dataSource.textContentView?.frameSet(upY: (self.superview?.frame.height)!*(2/3), downY: (self.superview?.frame.height)!*(1/5))
             dataSource.textContentView?.isHidden = false
         }
     }

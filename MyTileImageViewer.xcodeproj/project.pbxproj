@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00D5103113F3E20505C6A175 /* Pods_MyTileImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AEA15A62F723ECC37F013C /* Pods_MyTileImageViewer.framework */; };
 		041F9A51200B25760047A223 /* MyMinimapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F9A50200B25760047A223 /* MyMinimapDataSource.swift */; };
+		041F9A53200B31690047A223 /* train.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 041F9A52200B31680047A223 /* train.jpg */; };
 		04727BCA200772F800E23872 /* AudioContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC3200772F600E23872 /* AudioContentView.swift */; };
 		04727BCB200772F800E23872 /* EditorContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC4200772F600E23872 /* EditorContentViewController.swift */; };
 		04727BCC200772F800E23872 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727BC5200772F700E23872 /* VideoContentView.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		041F9A50200B25760047A223 /* MyMinimapDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMinimapDataSource.swift; sourceTree = "<group>"; };
+		041F9A52200B31680047A223 /* train.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = train.jpg; sourceTree = "<group>"; };
 		04727BC3200772F600E23872 /* AudioContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContentView.swift; sourceTree = "<group>"; };
 		04727BC4200772F600E23872 /* EditorContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContentViewController.swift; sourceTree = "<group>"; };
 		04727BC5200772F700E23872 /* VideoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 			children = (
 				04727BD4200B131B00E23872 /* shopping.jpg */,
 				04727BD3200B131A00E23872 /* shoppingSmall.jpeg */,
+				041F9A52200B31680047A223 /* train.jpg */,
+				7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */,
 				04727BC2200772C000E23872 /* UIScrollView_content */,
 				7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */,
 				7EE82A4D1FF8E61300901157 /* bench.jpg */,
@@ -146,7 +150,6 @@
 				7E0C4F971FF730A100778CED /* Supporting Files */,
 				7EF71CE71FF4C13D001C3EF2 /* Info.plist */,
 				7EF71CF21FF4C90C001C3EF2 /* TileImageView */,
-				7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */,
 				7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */,
 				041F9A50200B25760047A223 /* MyMinimapDataSource.swift */,
 				7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */,
@@ -243,6 +246,7 @@
 				7EF458EA20036D81000EC706 /* LICENSE in Resources */,
 				04727BD6200B131C00E23872 /* shopping.jpg in Resources */,
 				7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */,
+				041F9A53200B31690047A223 /* train.jpg in Resources */,
 				7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */,
 				7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */,
 				04727BD5200B131C00E23872 /* shoppingSmall.jpeg in Resources */,

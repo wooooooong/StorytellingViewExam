@@ -15,6 +15,7 @@ enum ContentStatus: Int {
 
 public class TextContentView: UIView {
     var textContentResizeView = UIView()
+    var upImageView = UIImageView()
     private var resizeTapGestureRecognizer = UITapGestureRecognizer()
     private var linkLabelTapGestureRecognizer = UITapGestureRecognizer()
     
@@ -23,6 +24,9 @@ public class TextContentView: UIView {
     var linkLable = UILabel()
     var textLabel = UILabel()
     
+    var upY = CGFloat()
+    var downY = CGFloat()
+    
     var contentStatus: ContentStatus = .hide
     
     func setTextContent() {
@@ -30,8 +34,12 @@ public class TextContentView: UIView {
         self.backgroundColor = UIColor.white
         
         textContentResizeView = UIView(frame: CGRect(x: self.frame.width - 30, y: 10, width: 25, height: 25))
-        textContentResizeView.backgroundColor = UIColor.white
+        upImageView.frame.origin = .zero
+        upImageView.frame.size = textContentResizeView.frame.size
+        upImageView.image = UIImage(named: "up.png")
+        upImageView.contentMode = .scaleAspectFit
         contentScrollView.addSubview(textContentResizeView)
+        textContentResizeView.addSubview(upImageView)
         
         resizeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resizeViewTap(_:)))
         resizeTapGestureRecognizer.delegate = self
@@ -46,6 +54,11 @@ public class TextContentView: UIView {
         contentScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         contentScrollView.canCancelContentTouches = true
         self.addSubview(contentScrollView)
+    }
+    
+    public func frameSet(upY: CGFloat, downY: CGFloat) {
+        self.upY = upY
+        self.downY = downY
     }
     
     public func labelSet(title: String?, link: String?, text: String?) {
@@ -88,15 +101,17 @@ extension TextContentView: UIGestureRecognizerDelegate {
             contentStatus = .show
             
             UIView.animate(withDuration: 0.5, animations: {
-                self.frame = CGRect(x: 0, y: (self.superview?.frame.height)! - 400, width: (self.superview?.frame.width)!, height: 400)
+                self.frame = CGRect(x: 0, y: (self.superview?.frame.height)! - self.upY, width: (self.superview?.frame.width)!, height: self.upY)
                 self.contentScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+                self.upImageView.transform = self.upImageView.transform.rotated(by: CGFloat(Double.pi))
             })
         } else {
             contentStatus = .hide
             
             UIView.animate(withDuration: 0.5, animations: {
-                self.frame = CGRect(x: 0, y: (self.superview?.frame.height)! - 100, width: (self.superview?.frame.width)!, height: 100)
+                self.frame = CGRect(x: 0, y: (self.superview?.frame.height)! - self.downY, width: (self.superview?.frame.width)!, height: self.downY)
                 self.contentScrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+                self.upImageView.transform = self.upImageView.transform.rotated(by: CGFloat(Double.pi))
             })
         }
     }

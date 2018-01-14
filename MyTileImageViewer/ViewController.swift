@@ -28,10 +28,10 @@ class ViewController: UIViewController {
     var centerPoint = UIView()
     var markerArray = [MarkerView]()
     var imageSize = CGSize()
-    var imageName = "bench"
+    var imageName = "shopping"
     var imageExtension = "jpg"
-    var thumbnailName = "smallBench"
-    var thumbnailExtension = "jpg"
+    var thumbnailName = "shoppingSmall"
+    var thumbnailExtension = "jpeg"
     
     @objc func addMarker(_ notification: NSNotification){
         let marker = MarkerView()
@@ -111,11 +111,12 @@ class ViewController: UIViewController {
         markerDataSource = MarkerViewDataSource(scrollView: tileImageScrollView, imageSize: imageSize, ratioByImage: ratio, titleLabelView: titleLabel, audioContentView: audioContentView, videoContentView: videoContentView, textContentView: textContentView)
         
         // minimap 설정
-        minimapDataSource = MyMinimapDataSource(scrollView: tileImageScrollView, thumbnailImage: UIImage(contentsOfFile : thumbnailImageURL.path)! , originImageSize: imageSize)
+        let thumbnailImage = UIImage(contentsOfFile : thumbnailImageURL.path)!
+        minimapDataSource = MyMinimapDataSource(scrollView: tileImageScrollView, thumbnailImage: thumbnailImage, originImageSize: imageSize)
         
         minimapDataSource?.borderColor = UIColor.red
         minimapDataSource?.borderWidth = 2.0
-        minimapDataSource?.downSizeRatio = 4.0
+        minimapDataSource?.downSizeRatio = 5 * thumbnailImage.size.width / view.frame.width
         minimap.set(dataSource: minimapDataSource!)
         
         
